@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="urlredModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="urlredModelStoreContainer">
+    <EntitySet Name="car" EntityType="urlredModel.Store.car" store:Type="Tables" Schema="urlred" />
+    <EntitySet Name="city" EntityType="urlredModel.Store.city" store:Type="Tables" Schema="urlred" />
+    <EntitySet Name="fruit" EntityType="urlredModel.Store.fruit" store:Type="Tables" Schema="urlred" />
+    <EntitySet Name="redirect" EntityType="urlredModel.Store.redirect" store:Type="Tables" Schema="urlred" />
+  </EntityContainer>
+  <EntityType Name="car">
+    <Key>
+      <PropertyRef Name="CarID" />
+    </Key>
+    <Property Name="CarID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Make" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Model" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="city">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Country" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="fruit">
+    <Key>
+      <PropertyRef Name="FruitID" />
+    </Key>
+    <Property Name="FruitID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Color" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="redirect">
+    <Key>
+      <PropertyRef Name="RedirectID" />
+    </Key>
+    <Property Name="RedirectID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Key" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="View" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+</Schema>

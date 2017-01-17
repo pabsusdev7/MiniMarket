@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="urlredModelStoreContainer" CdmEntityContainer="urlredEntities">
+    <EntitySetMapping Name="cars">
+      <EntityTypeMapping TypeName="urlredModel.car">
+        <MappingFragment StoreEntitySet="car">
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+          <ScalarProperty Name="Make" ColumnName="Make" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cities">
+      <EntityTypeMapping TypeName="urlredModel.city">
+        <MappingFragment StoreEntitySet="city">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fruits">
+      <EntityTypeMapping TypeName="urlredModel.fruit">
+        <MappingFragment StoreEntitySet="fruit">
+          <ScalarProperty Name="FruitID" ColumnName="FruitID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="redirects">
+      <EntityTypeMapping TypeName="urlredModel.redirect">
+        <MappingFragment StoreEntitySet="redirect">
+          <ScalarProperty Name="RedirectID" ColumnName="RedirectID" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="View" ColumnName="View" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

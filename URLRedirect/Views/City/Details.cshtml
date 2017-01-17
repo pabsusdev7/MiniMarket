@@ -1,0 +1,29 @@
+﻿@model URLRedirect.DAL.city
+
+@{
+    ViewBag.Title = "Details = City";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>City</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Country)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Country)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CityID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
