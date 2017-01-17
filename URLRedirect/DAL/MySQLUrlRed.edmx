@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="urlredModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="urlredModelStoreContainer">
+          <EntitySet Name="car" EntityType="urlredModel.Store.car" store:Type="Tables" Schema="urlred" />
+          <EntitySet Name="city" EntityType="urlredModel.Store.city" store:Type="Tables" Schema="urlred" />
+          <EntitySet Name="fruit" EntityType="urlredModel.Store.fruit" store:Type="Tables" Schema="urlred" />
+          <EntitySet Name="redirect" EntityType="urlredModel.Store.redirect" store:Type="Tables" Schema="urlred" />
+        </EntityContainer>
+        <EntityType Name="car">
+          <Key>
+            <PropertyRef Name="CarID" />
+          </Key>
+          <Property Name="CarID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Make" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Model" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="city">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Country" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fruit">
+          <Key>
+            <PropertyRef Name="FruitID" />
+          </Key>
+          <Property Name="FruitID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Color" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="redirect">
+          <Key>
+            <PropertyRef Name="RedirectID" />
+          </Key>
+          <Property Name="RedirectID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Key" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="View" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="urlredModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="urlredEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="cars" EntityType="urlredModel.car" />
+          <EntitySet Name="cities" EntityType="urlredModel.city" />
+          <EntitySet Name="fruits" EntityType="urlredModel.fruit" />
+          <EntitySet Name="redirects" EntityType="urlredModel.redirect" />
+        </EntityContainer>
+        <EntityType Name="car">
+          <Key>
+            <PropertyRef Name="CarID" />
+          </Key>
+          <Property Name="CarID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Make" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="city">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="fruit">
+          <Key>
+            <PropertyRef Name="FruitID" />
+          </Key>
+          <Property Name="FruitID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Color" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="redirect">
+          <Key>
+            <PropertyRef Name="RedirectID" />
+          </Key>
+          <Property Name="RedirectID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Key" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="View" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="urlredModelStoreContainer" CdmEntityContainer="urlredEntities">
+          <EntitySetMapping Name="cars">
+            <EntityTypeMapping TypeName="urlredModel.car">
+              <MappingFragment StoreEntitySet="car">
+                <ScalarProperty Name="CarID" ColumnName="CarID" />
+                <ScalarProperty Name="Make" ColumnName="Make" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cities">
+            <EntityTypeMapping TypeName="urlredModel.city">
+              <MappingFragment StoreEntitySet="city">
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fruits">
+            <EntityTypeMapping TypeName="urlredModel.fruit">
+              <MappingFragment StoreEntitySet="fruit">
+                <ScalarProperty Name="FruitID" ColumnName="FruitID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="redirects">
+            <EntityTypeMapping TypeName="urlredModel.redirect">
+              <MappingFragment StoreEntitySet="redirect">
+                <ScalarProperty Name="RedirectID" ColumnName="RedirectID" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="View" ColumnName="View" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
